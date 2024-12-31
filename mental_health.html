@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health Awareness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd; /* Soft Blue */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #4caf50; /* Cool Green */
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 28px;
+            margin-top: 40px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .section-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3f51b5; /* Cool Blue */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            background-color: #283593; /* Darker Blue */
+        }
+
+        .section-header:hover h2 {
+            transform: translateX(10px);
+            color: #fff;
+        }
+
+        .section-header span {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li strong {
+            font-weight: bold;
+        }
+
+        a {
+            color: #2196f3; /* Blue */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3f51b5; /* Cool Blue */
+            color: white;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #81d4fa, #b3e5fc); /* Cool gradient blue tones */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+        }
+
+        .section.expanded {
+            padding: 50px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .section .details {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f8e9; /* Light Green */
+            border-radius: 8px;
+            animation: fadeIn 0.5s ease-in-out;
+            transition: all 0.5s ease;
+        }
+
+        .details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .details img:hover {
+            transform: scale(1.05);
+        }
+
+        .animated-fade {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .animated-fade.visible {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container py-5">
+            <h1>Mental Health Awareness</h1>
+            <p>Your mental well-being is just as important as physical health.</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container py-5">
+        <div class="section animated-fade visible" id="intro" onclick="toggleDetails('intro-details', this)">
+            <div class="section-header">
+                <h2>What is Mental Health?</h2>
+                <span>&#9660;</span>
+            </div>
+            <div id="intro-details" class="details">
+                <p><strong>Mental health</strong> refers to a person’s emotional, psychological, and social well-being. It affects how individuals think, feel, and behave, and plays a crucial role in how they handle stress, relate to others, and make decisions. Mental health is essential at every stage of life, from childhood and adolescence through adulthood. Just like physical health, mental health is a vital part of overall well-being, and maintaining it is important for living a fulfilling and balanced life.</p>
+
+                <p>Having good mental health helps individuals realize their potential, cope with the normal stresses of life, work productively, and contribute to their community. Mental health is influenced by various factors, including genetics, environment, life experiences, and individual coping mechanisms. It can change over time, as people go through different challenges and experiences.</p>
+                
+                <p><strong>Key Aspects of Mental Health:</strong></p>
+                <ul>
+                    <li><strong>Emotional well-being:</strong> The ability to manage emotions, cope with challenges, and form positive relationships with others.</li>
+                    <li><strong>Psychological well-being:</strong> A sense of purpose in life, self-esteem, and a positive outlook on life, which help individuals feel good about themselves and their achievements.</li>
+                    <li><strong>Social well-being:</strong> The ability to build and maintain healthy relationships, communicate effectively, and engage with others in meaningful ways.</li>
+                </ul>
+                
+                <p>Mental health also influences how people respond to daily life events. A person with good mental health is able to manage stress in a healthy way, navigate challenges, and recover from setbacks. On the other hand, poor mental health can lead to difficulties in coping with life, hinder relationships, and affect productivity at work or school. Early identification and treatment of mental health conditions are crucial for improving overall quality of life and preventing long-term issues.</p>
+                
+                <p>Everyone’s mental health is unique, and it's important to recognize that mental health challenges are common and treatable. Mental health is not only about the absence of mental illness but also about the presence of positive qualities that enhance well-being and personal growth. Promoting mental health and well-being is a shared responsibility that involves individuals, families, communities, and society as a whole.</p>
+                
+                <img src="https://via.placeholder.com/600x300/2196f3/ffffff?text=Mental+Health+Awareness" alt="Mental Health">
+            </div>
+        </div>
+
+        <div class="section animated-fade visible" id="common-issues" onclick="toggleDetails('issues-details', this)">
+            <div class="section-header">
+                <h2>Common Mental Health Issues</h2>
+                <span>&#9660;</span>
+            </div>
+            <div id="issues-details" class="details">
+                <p><strong>Anxiety Disorders:</strong> These are the most common mental health conditions. Symptoms can include constant worry, panic attacks, and irrational fears. Common anxiety disorders include Generalized Anxiety Disorder (GAD), Social Anxiety Disorder, Panic Disorder, and Phobias.</p>
+                <p><strong>Depression:</strong> Symptoms of depression include feelings of sadness, hopelessness, and a lack of interest in activities once enjoyed. It can cause severe emotional and physical symptoms, affecting the ability to function.</p>
+                <p><strong>Post-Traumatic Stress Disorder (PTSD):</strong> PTSD occurs after experiencing traumatic events, leading to symptoms such as flashbacks, nightmares, and severe anxiety.</p>
+                <p><strong>Obsessive-Compulsive Disorder (OCD):</strong> A chronic disorder involving persistent thoughts (obsessions) and repetitive behaviors (compulsions). OCD can interfere with daily life if not properly managed.</p>
+                <p><strong>Personality Disorders:</strong> Conditions that affect how people perceive and interact with others. Examples include Borderline Personality Disorder (BPD), Narcissistic Personality Disorder, and Antisocial Personality Disorder.</p>
+                <img src="https://via.placeholder.com/600x300/4caf50/ffffff?text=Common+Mental+Health+Issues" alt="Common Issues">
+            </div>
+        </div>
+
+        <div class="section animated-fade visible" id="signs-symptoms" onclick="toggleDetails('symptoms-details', this)">
+            <div class="section-header">
+                <h2>Signs and Symptoms</h2>
+                <span>&#9660;</span>
+            </div>
+            <div id="symptoms-details" class="details">
+                <p><strong>Emotional Signs:</strong> Feelings of sadness, guilt, or worthlessness, mood swings, irritability, emotional outbursts.</p>
+                <p><strong>Physical Symptoms:</strong> Fatigue, changes in appetite, sleep disturbances, unexplained aches and pains, frequent illnesses.</p>
+                <p><strong>Behavioral Symptoms:</strong> Withdrawing from social activities, neglecting responsibilities, inability to focus, substance abuse.</p>
+                <p><strong>Cognitive Symptoms:</strong> Difficulty concentrating, memory problems, persistent negative thoughts, confusion.</p>
+                <img src="https://via.placeholder.com/600x300/03a9f4/ffffff?text=Signs+and+Symptoms" alt="Signs and Symptoms">
+            </div>
+        </div>
+
+        <div class="section animated-fade visible" id="treatment" onclick="toggleDetails('treatment-details', this)">
+            <div class="section-header">
+                <h2>Treatment Options</h2>
+                <span>&#9660;</span>
+            </div>
+            <div id="treatment-details" class="details">
+                <p><strong>Therapy:</strong> Talking therapies such as Cognitive Behavioral Therapy (CBT) and psychotherapy are effective treatments for many mental health conditions.</p>
+                <p><strong>Medication:</strong> Antidepressants, anti-anxiety medications, and antipsychotics are commonly prescribed for conditions such as depression and anxiety disorders.</p>
+                <p><strong>Support Groups:</strong> Joining a support group can help individuals feel less isolated and share experiences with others facing similar challenges.</p>
+                <p><strong>Lifestyle Changes:</strong> Exercise, proper diet, mindfulness, and stress-reduction techniques can also help manage mental health.</p>
+                <img src="https://via.placeholder.com/600x300/9c27b0/ffffff?text=Treatment+Options" alt="Treatment Options">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mental Health Awareness. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDetails(id, element) {
+            var details = document.getElementById(id);
+            var section = element.closest('.section');
+
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                section.classList.remove('expanded');
+            } else {
+                details.style.display = 'block';
+                section.classList.add('expanded');
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

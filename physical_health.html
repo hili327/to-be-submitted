@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Physical Health</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #8BC34A, #388E3C);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #43A047, #2E7D32);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            animation: fadeInHeader 1.5s forwards;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        header p {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 15px;
+        }
+
+        /* Section Style */
+        .section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #66BB6A, #388E3C);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            background: linear-gradient(90deg, #388E3C, #2E7D32);
+        }
+
+        .section-header span {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section-header:hover span {
+            transform: rotate(180deg);
+        }
+
+        .details {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #E8F5E9;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .details img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .details img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #2E7D32;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Header fadeIn animation */
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section SlideIn animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Smooth Fade-in for Sections */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Physical Health</h1>
+            <p>Your journey to a healthy body and mind starts here.</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Sections -->
+        <div class="section" id="fitness" onclick="toggleDetails('fitness-details', this)">
+            <div class="section-header">
+                <h2>Fitness & Exercise</h2>
+                <span>&#9660;</span>
+            </div>
+            <div id="fitness-details" class="details">
+                <p>Regular physical activity is essential for maintaining good health...</p>
+                <ul>
+                    <li>Strength Training: Increases muscle strength...</li>
+                </ul>
+                <img src="https://via.placeholder.com/600x400/81c784/ffffff" alt="Fitness">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Physical Health. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDetails(id, element) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+
+</html>

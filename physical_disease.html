@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical Health</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      animation: mysteriousGlow 3s infinite alternate;
+    }
+    @keyframes mysteriousGlow {
+      from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+      }
+    }
+    .disease-box {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #0ff;
+      border-radius: 8px;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .disease-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ff;
+    }
+    .modal-content {
+      background-color: #1b2838;
+      color: white;
+    }
+    footer {
+      background: #141e30;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physical Health Awareness</h1>
+    <p>Explore and understand physical health conditions.</p>
+  </header>
+
+  <!-- Physical Diseases Introduction -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">What Are Physical Diseases?</h2>
+    <p>
+      Physical diseases encompass a wide range of conditions that affect the body's functions and structures. These disorders can impact an individual's daily life, overall health, and well-being.
+    </p>
+    <p>
+      Common physical health disorders include diabetes, hypertension, heart diseases, and arthritis. Understanding these conditions is essential for promoting health and providing support to those in need.
+    </p>
+    <p>
+      Below, you’ll find a comprehensive list of common physical health conditions. Click on each box to learn more about the condition, including detailed descriptions and helpful resources.
+    </p>
+  </section>
+
+  <!-- Disease Boxes -->
+  <div class="container">
+    <div class="row g-4">
+      <!-- Disease data for 15 diseases -->
+      <script>
+        const diseases = [
+          { name: "Diabetes", description: "A condition where blood sugar levels are abnormally high.", img: "images/diabetes.jpg", details: "Diabetes can lead to complications like heart disease, kidney problems, and nerve damage if not managed properly." },
+          { name: "Hypertension", description: "Also known as high blood pressure, it increases the risk of heart and kidney diseases.", img: "images/hypertension.jpg", details: "Hypertension often has no symptoms but can be managed with lifestyle changes and medication." },
+          { name: "Heart Disease", description: "Conditions affecting the heart, including coronary artery disease and arrhythmias.", img: "images/heart_disease.jpg", details: "Heart diseases are a leading cause of death globally but can be prevented with a healthy lifestyle." },
+          { name: "Arthritis", description: "Inflammation of the joints causing pain and stiffness.", img: "images/arthritis.jpg", details: "Arthritis is common in older adults and can significantly affect mobility and quality of life." },
+          { name: "Asthma", description: "A condition where airways become inflamed and narrow, causing difficulty in breathing.", img: "images/asthma.jpg", details: "Asthma triggers include allergens, exercise, and pollution. It can often be controlled with medication." },
+          { name: "Obesity", description: "Excess body fat that increases the risk of health problems.", img: "images/obesity.jpg", details: "Obesity can lead to diseases like diabetes, heart disease, and joint problems." },
+          { name: "Cancer", description: "A disease where abnormal cells grow uncontrollably.", img: "images/cancer.jpg", details: "Cancer can affect any part of the body and often requires surgery, chemotherapy, or radiation for treatment." },
+          { name: "Chronic Pain", description: "Persistent pain lasting for months or years.", img: "images/chronic_pain.jpg", details: "Chronic pain can result from various conditions, including injuries and diseases like fibromyalgia." },
+          { name: "Osteoporosis", description: "A condition causing bones to become weak and brittle.", img: "images/osteoporosis.jpg", details: "Osteoporosis is common in older adults, especially women, and can lead to fractures." },
+          { name: "Kidney Disease", description: "Damage to the kidneys that affects their ability to filter blood.", img: "images/kidney_disease.jpg", details: "Kidney disease can lead to kidney failure and often requires dialysis or transplantation." }
+        ];
+
+        for (let i = 0; i < diseases.length; i++) {
+          const disease = diseases[i];
+          document.write(`
+            <div class="col-md-4">
+              <div class="disease-box" data-bs-toggle="modal" data-bs-target="#diseaseModal${i}">
+                <h5>${disease.name}</h5>
+                <p>${disease.description}</p>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="diseaseModal${i}" tabindex="-1" aria-labelledby="modalLabel${i}" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel${i}">${disease.name}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img src="${disease.img}" alt="${disease.name}" class="img-fluid mb-3">
+                    <p>${disease.details}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Physical Health Awareness. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

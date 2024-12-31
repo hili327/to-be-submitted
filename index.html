@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalVista</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #CACBCD, #B3B9C1, #77726E);
+            scroll-behavior: smooth;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        /* Header and Navbar */
+        header {
+            height: 400px;
+            padding: 50px;
+            position: relative;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 0;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 99, 71, 0.8), #77726E, #977DFF);
+            z-index: 0;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #FFD700;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #FFD700;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FF4500, 0 0 80px #FF4500; }
+            50% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FF4500, 0 0 60px #FF6347, 0 0 120px #FF6347; }
+            100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FF4500, 0 0 80px #FF4500; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-transform: uppercase;
+            animation: glow 2s infinite, fadeIn 1.5s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Boxes Section */
+        .menu {
+            position: relative;
+            color: #fff;
+            text-align: center;
+            height: 250px;
+            width: 250px;
+            display: inline-block;
+            border-radius: 50%;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .menu h2 {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            z-index: 1;
+            color: #fff;
+            width: 80%;
+            text-align: center;
+        }
+
+        .menu:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        #maintain-health {
+            background-image: url('images/maintain-health8.jpg');
+        }
+
+        #about-disease {
+            background-image: url('images/ad1.jpg');
+        }
+
+        #psychology {
+            background-image: url('images/psychology3.jpg');
+        }
+
+        #communication {
+            background-image: url('images/communication6.jpg');
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                width: 100%;
+                height: 200px;
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h2>WELCOME TO VITALVISTA</h2>
+    </header>
+
+    <section id="boxes" class="boxes-list">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="menu" id="maintain-health" onclick="window.location.href='maintain-health.html'">
+                        <h2>Maintain Health</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="menu" id="about-disease" onclick="window.location.href='about_disease.html'">
+                        <h2>About Disease</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="menu" id="psychology" onclick="window.location.href='psychology.html'">
+                        <h2>Psychology</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="menu" id="communication" onclick="window.location.href='communication.html'">
+                        <h2>Communication</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+      <h2>About Us</h2>
+      <p>We are a health-focused platform that offers reliable information to help you maintain a healthy lifestyle, prevent diseases, and improve your mental well-being.</p>
+      <p class="highlight">Our mission is to promote health awareness and provide resources for individuals seeking guidance in their health journey.</p>
+  </section>
+
+<!-- Contact Us Section -->
+<div class="info-section">
+  <h2>Contact Us</h2>
+  <p>Have questions or need guidance? Reach out to us anytime, and we’ll be happy to assist you on your journey to better health.</p>
+  <p>Click below to reach us on social media:</p>
+
+  <!-- Telegram Link -->
+  <p><a href="https://t.me/That_0ne_girl" target="_blank" style="color: #00A9E0; font-size: 20px; text-decoration: none; font-weight: bold;">Telegram</a></p>
+  
+ 
+  <!-- Instagram Link -->
+  <p><a href="https://www.instagram.com/exclusivly_m.e" target="_blank" style="color: #E4405F; font-size: 20px; text-decoration: none; font-weight: bold;">Instagram</a></p>
+</div>
+
+    <div class="footer">
+        <p>© 2024 VitalVista. All rights reserved.</p>
+    </div>
+</body>
+</html>

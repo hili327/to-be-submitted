@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 30px;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #444444;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Header */
+        header {
+            background-image: url('images/BG3.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 60px;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 22px;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Content Section */
+        .container {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Boxes */
+        .section-box {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            padding: 30px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-box p {
+            font-size: 18px;
+        }
+
+        /* About Us and Contact Us Section */
+        .info-section {
+            margin-top: 50px;
+            background-color: #222;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Maintain Your Health</h1>
+        <p>Explore the journey to a healthier you</p>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+
+        <!-- Functional Health Boxes -->
+        <div class="section-box" onclick="window.location.href='mental_health.html'">
+            <h3>Mental Health</h3>
+            <p>Discover the importance of mental well-being and practical tips to enhance your mind.</p>
+        </div>
+
+        <div class="section-box" onclick="window.location.href='physical_health.html'">
+            <h3>Physical Health</h3>
+            <p>Learn how to maintain a fit body through exercise, nutrition, and healthy habits.</p>
+        </div>
+
+        <div class="section-box" onclick="window.location.href='overall_health.html'">
+            <h3>Overall Health</h3>
+            <p>Understand the connection between physical, mental, and emotional well-being.</p>
+        </div>
+
+        <!-- About Us Section -->
+        <div class="info-section">
+            <h2>About Us</h2>
+            <p>We are dedicated to helping you maintain a balanced and healthy life. Our mission is to provide the best tips and resources to ensure your well-being.</p>
+        </div>
+<!-- Contact Us Section -->
+<div class="info-section">
+    <h2>Contact Us</h2>
+    <p>Have questions or need guidance? Reach out to us anytime, and we’ll be happy to assist you on your journey to better health.</p>
+    <p>Click below to reach us on social media:</p>
+
+    <!-- Telegram Link -->
+    <p><a href="https://t.me/That_0ne_girl" target="_blank" style="color: #00A9E0; font-size: 20px; text-decoration: none; font-weight: bold;">Telegram</a></p>
+    
+    <!-- Instagram Link -->
+    <p><a href="https://www.instagram.com/exclusivly_m.e" target="_blank" style="color: #E4405F; font-size: 20px; text-decoration: none; font-weight: bold;">Instagram</a></p>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Maintain Health. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

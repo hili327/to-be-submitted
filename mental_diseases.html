@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      animation: mysteriousGlow 3s infinite alternate;
+    }
+    @keyframes mysteriousGlow {
+      from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+      }
+    }
+    .disease-box {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #0ff;
+      border-radius: 8px;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .disease-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ff;
+    }
+    .modal-content {
+      background-color: #1b2838;
+      color: white;
+    }
+    footer {
+      background: #141e30;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mental Health Awareness</h1>
+    <p>Explore and understand mental health conditions.</p>
+  </header>
+
+  <!-- Mental Diseases Introduction -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">What Are Mental Diseases?</h2>
+    <p>
+      Mental diseases, also known as mental health disorders, encompass a wide range of conditions that affect mood, thinking, and behavior. These disorders can significantly impact an individual's daily life, relationships, and overall well-being.
+    </p>
+    <p>
+      Common mental health disorders include anxiety, depression, bipolar disorder, and schizophrenia. Understanding these conditions is essential for promoting mental health and providing support to those in need.
+    </p>
+    <p>
+      Below, you’ll find a comprehensive list of common mental health conditions. Click on each box to learn more about the condition, including detailed descriptions and helpful resources.
+    </p>
+  </section>
+
+  <!-- Disease Boxes -->
+  <div class="container">
+    <div class="row g-4">
+      <!-- Disease data for 15 diseases -->
+      <script>
+        const diseases = [
+          { name: "Anxiety", description: "A mental health condition causing feelings of worry and fear. It can interfere with daily activities.", img: "images/Anxiety.jpg", details: "Anxiety disorders can cause a variety of symptoms, including constant worry, difficulty concentrating, and physical symptoms like a rapid heartbeat or sweating." },
+          { name: "Depression", description: "A mood disorder causing persistent sadness and a lack of interest in activities.", img: "images/depression.jpg", details: "Depression often includes feelings of hopelessness, changes in appetite, and difficulty finding pleasure in things that once brought joy." },
+          { name: "Bipolar Disorder", description: "A disorder causing extreme mood swings, including emotional highs and lows.", img: "images/", details: "Bipolar disorder is marked by episodes of mania and depression. The manic phase can lead to impulsive behaviors, while the depressive phase often leads to feelings of worthlessness." },
+          { name: "Schizophrenia", description: "A serious disorder affecting how a person thinks, feels, and behaves, often leading to disorganized thoughts.", img: "images/", details: "Schizophrenia is characterized by hallucinations, delusions, and impaired thinking. It often requires long-term treatment and support." },
+          { name: "Obsessive-Compulsive Disorder (OCD)", description: "A disorder characterized by persistent, uncontrollable thoughts (obsessions) and repetitive behaviors (compulsions).", img: "images/", details: "OCD can make it difficult to function in daily life. Common compulsions include excessive cleaning or checking things repeatedly." },
+          { name: "Post-Traumatic Stress Disorder (PTSD)", description: "A mental health condition triggered by experiencing or witnessing a traumatic event.", img: "images/", details: "Symptoms of PTSD include flashbacks, nightmares, and emotional numbness, often after a traumatic event such as war or natural disasters." },
+          { name: "Attention-Deficit/Hyperactivity Disorder (ADHD)", description: "A neurodevelopmental disorder characterized by inattention, impulsivity, and hyperactivity.", img: "images/", details: "ADHD can affect both children and adults, leading to difficulties in maintaining focus, completing tasks, and controlling impulsive behaviors." },
+          { name: "Eating Disorders", description: "Conditions characterized by abnormal eating habits that negatively affect health.", img: "images/", details: "Eating disorders like anorexia and bulimia can lead to severe health complications and require specialized treatment." },
+          { name: "Borderline Personality Disorder (BPD)", description: "A disorder characterized by intense emotional experiences and difficulties with interpersonal relationships.", img: "images/", details: "People with BPD may experience extreme mood swings and may have difficulty maintaining stable relationships." },
+          { name: "Social Anxiety Disorder", description: "A chronic fear of being judged or negatively evaluated in social situations.", img: "images/", details: "Social anxiety can cause intense fear of public speaking or social gatherings, leading to avoidance of such situations." },
+          { name: "Panic Disorder", description: "A disorder characterized by recurrent, unexpected panic attacks.", img: "images/", details: "Panic disorder can cause sudden, intense feelings of terror that often result in physical symptoms like chest pain and shortness of breath." },
+          { name: "Specific Phobias", description: "An intense, irrational fear of specific objects or situations.", img: "images/", details: "Phobias may cause individuals to avoid situations or things they fear, such as heights, spiders, or flying." },
+          { name: "Autism Spectrum Disorder (ASD)", description: "A developmental disorder affecting social interaction and communication.", img: "images/", details: "Individuals with ASD may have difficulty with social communication and exhibit repetitive behaviors or restricted interests." },
+          { name: "Sleep Disorders", description: "Conditions that disrupt normal sleep patterns, including insomnia and narcolepsy.", img: "images/", details: "Sleep disorders can lead to persistent fatigue, difficulty falling asleep, or excessive daytime sleepiness." }
+        ];
+
+        for (let i = 0; i < 15; i++) {
+          const disease = diseases[i];
+          document.write(`
+            <div class="col-md-4">
+              <div class="disease-box" data-bs-toggle="modal" data-bs-target="#diseaseModal${i}">
+                <h5>${disease.name}</h5>
+                <p>${disease.description}</p>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="diseaseModal${i}" tabindex="-1" aria-labelledby="modalLabel${i}" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel${i}">${disease.name}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img src="${disease.img}" alt="${disease.name}" class="img-fluid mb-3">
+                    <p>${disease.details}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <section id="about-us" class="mt-5 p-5">
+    <h2>About Us</h2>
+    <p>We are dedicated to spreading awareness about mental health and providing resources to those in need.</p>
+  </section>
+
+  <!-- Contact Us Section -->
+  <div class="info-section">
+    <h2>Contact Us</h2>
+    <p>Have questions or need guidance? Reach out to us anytime, and we’ll be happy to assist you on your journey to better health.</p>
+    <p>Click below to reach us on social media:</p>
+  
+    <!-- Telegram Link -->
+    <p><a href="https://t.me/That_0ne_girl" target="_blank" style="color: #00A9E0; font-size: 20px; text-decoration: none; font-weight: bold;">Telegram</a></p>
+    
+   
+    <!-- Instagram Link -->
+    <p><a href="https://www.instagram.com/exclusivly_m.e" target="_blank" style="color: #E4405F; font-size: 20px; text-decoration: none; font-weight: bold;">Instagram</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Mental Health Awareness. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
